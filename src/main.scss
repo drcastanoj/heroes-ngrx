@@ -1,0 +1,20 @@
+	.loading{
+		background: #fff;
+		display: block;
+		height: 100%;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		img{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	body{
+		background: #f3f3f3;
+	}
+
