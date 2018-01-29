@@ -9,18 +9,24 @@ import { UIRouterModule } from '@uirouter/angular';
 import { StoreModule } from '@ngrx/store';
 import { heroesReducer } from './reducers/heroes.reduces';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { HeroCard } from './hero-card/hero-card.component';
+import { ShareModule } from '../share/share.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpClientModule,
-    UIRouterModule,
     StoreModule.forRoot({ heroes: heroesReducer }),
-    StoreDevtoolsModule.instrument()
+    StoreDevtoolsModule.instrument(),
+    ShareModule,
+    UIRouterModule,
+    FormsModule
   ],
   declarations: [
     HeroList,
-    HeroDetail
+    HeroDetail,
+    HeroCard
   ],
   providers: [
     HeroService

@@ -1,3 +1,6 @@
+	@import "./assets/styles/fonts.scss"; 
+	@import "./assets/styles/variables.scss"; 
+
 	.loading{
 		background: #fff;
 		display: block;
@@ -14,7 +17,8 @@
 		}
 	}
 
-	body{
-		background: #f3f3f3;
+	html {
+		background: url("~assets/img/allavengers.jpg") no-repeat center left fixed; 
+		background-size: cover;
 	}
 

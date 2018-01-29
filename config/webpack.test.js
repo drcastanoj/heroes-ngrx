@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var helpers = require('./helpers');
 var path = require('path');
-var tslint = require('../src/test/tslint.json');
+var tslint = require('../tslintTest.json');
 var directorio = path.join(__dirname, '../');
 module.exports = {
   devtool: 'inline-source-map',

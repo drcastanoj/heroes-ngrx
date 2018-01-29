@@ -10,38 +10,48 @@ module.exports = function (config) {
         exclude: [/\Test\.ts$/, /node_modules/],
         loader: 'istanbul-instrumenter-loader'
       });
-    reporters = ['kjhtml', 'progress', 'junit', 'coverage'];
+    reporters = [ 'progress', 'coverage'];
   } else {
-    reporters = ['kjhtml'];
+    reporters = ['progress'];
   }
   const coverage = config.singleRun ? ['coverage'] : [];
   var _config = {
     basePath: '',
 
-    frameworks: ['jasmine'],
-
+    frameworks: ['sinon', 'mocha', 'chai'],
+    plugins: [
+      'karma-chrome-launcher',
+      "karma-chai",
+      "karma-sinon-chai",
+      "karma-coverage",
+      "karma-mocha",
+      "karma-sinon",
+      "karma-webpack",
+      "karma-sourcemap-loader",
+      "karma-remap-istanbul"
+    ],
     files: [
-      { pattern: './config/karma-test-shim.js', watched: true }
+      '**/**.spec.ts'
     ],
 
     preprocessors: {
-      './config/karma-test-shim.js': ['webpack', 'sourcemap']
+      '**/**.spec.ts': ['webpack', 'sourcemap'],
+
     },
 
     webpack: webpackConfig,
 
     webpackMiddleware: {
-       stats: 'errors-only'
+      stats: 'errors-only'
     },
 
     webpackServer: {
       noInfo: true
     },
 
-    //reporters: ['kjhtml'],
     port: 9876,
     colors: true,
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
     autoWatch: true,
     browsers: ['Chrome'],
     singleRun: true,
@@ -79,6 +89,12 @@ module.exports = function (config) {
           file: 'coverage.lcov'
         }
       ]
+    },
+    client: {
+      captureConsole: true,
+      mocha: {
+        bail: true
+      }
     },
     // para evitar error en debug
     mime: {

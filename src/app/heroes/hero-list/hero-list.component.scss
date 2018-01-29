@@ -1,0 +1,20 @@
+@import "~assets/styles/variables.scss"; 
+.list{
+
+  display: flex;
+  flex-wrap: wrap;
+  
+  &__item{
+    width: 100%;
+    @media screen and (min-width: $break-sm) {
+      width: 49%;
+
+    }
+
+    @media screen and (min-width: $break-md) {
+      width: 30%;
+    }
+    
+  }
+
+}

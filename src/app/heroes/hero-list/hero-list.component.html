@@ -1,1 +1,5 @@
-{{heroes | json}}
+<div class="list">
+  <div class="list__item" *ngFor="let hero of  heroes; let i = index">
+    <hero-card [hero]="hero" [id]="i + 1" uiSref="hero-detail"  uiSrefActive="active"  [uiParams]="{ heroId: i }"></hero-card>
+  </div>
+</div>

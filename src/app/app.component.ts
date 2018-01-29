@@ -1,4 +1,3 @@
-import { HeroService } from './heroes/share/hero.service';
 import { Component } from '@angular/core';
 @Component({
   selector: 'app-container',
@@ -7,7 +6,6 @@ import { Component } from '@angular/core';
 
 })
 export class AppComponent {
-  constructor(private heroService: HeroService) {
-    this.heroService.getHeroes();
+  constructor() {
   }
 }

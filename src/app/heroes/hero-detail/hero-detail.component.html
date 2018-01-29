@@ -1,1 +1,46 @@
-<h1>{{hero | json}} </h1>
+<div class="card-detail" *ngIf="hero">
+  <div class="card-detail__profile">
+    <img [src]="hero._picture">
+    <div class="nickname">
+      <div class="nickname__title">
+        <input *ngIf="edit" type="text" [(ngModel)]="hero._nickname" [value]="hero._nickname"> {{ !edit ? hero._nickname : '' }}
+      </div>
+      <div class="nickname__description">Heroe</div>
+    </div>
+    <div class="card-detail__actions" *ngIf="!edit">
+      <span (click)="editHero()">
+        Editar
+      </span>
+      <span (click)="deleteHero()">
+        Elimnar
+      </span>
+      <span uiSref="hero-list" uiSrefActive="active">
+        Regresar
+      </span>
+    </div>
+
+    <div class="card-detail__actions" *ngIf="edit">
+      <span (click)="saveHero()">
+        Guardar
+      </span>
+    </div>
+  </div>
+  <div class="card-detail__description card-row">
+    <div class="card-row__col">
+      <div class="card-row__value">
+        <input *ngIf="edit" type="text" [(ngModel)]="hero._name" [value]="hero._name"> {{ !edit ? hero._name : ''}}
+      </div>
+      <div class="card-row__label">
+        Nombre
+      </div>
+    </div>
+    <div class="card-row__col">
+      <div class="card-row__value" >
+        {{  hero._height | meters }}
+      </div>
+      <div class="card-row__label">
+        Estatura
+      </div>
+    </div>
+  </div>
+</div>

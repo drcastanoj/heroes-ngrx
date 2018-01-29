@@ -10,9 +10,11 @@
       "es2015",
       "dom"
     ],
-    "noImplicitAny": false,
     "suppressImplicitAnyIndexErrors": true,
     "types": [
+      "mocha",
+      "sinon",
+      "chai",
       "node"
     ],
     "noUnusedLocals": true,

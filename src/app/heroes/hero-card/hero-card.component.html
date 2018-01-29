@@ -1,0 +1,12 @@
+<div class="card">
+  <span class="card__profile ">
+    <img [src]="hero._picture">
+    <span> {{ id | ordinal}}</span>
+  </span>
+  <span class="card__name  detail">
+    <div class="detail__nickname">{{hero._nickname}} </div>
+    <div class="detail__name"> {{ hero._name}}</div>
+    <div class="detail__size"> Estura {{hero._height | meters  }}mt</div>
+
+  </span>
+</div>
