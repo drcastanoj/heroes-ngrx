@@ -3,10 +3,10 @@
 
 ```bash
 # clone 
-git clone https://github.com/drcastanoj/gap
+git clone https://github.com/drcastanoj/heroes-ngrx
 
 # change directory to our repo
-cd gap
+cd heroes-ngrx
 
 # install the repo with npm
 npm install
