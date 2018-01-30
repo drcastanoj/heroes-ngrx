@@ -7,12 +7,12 @@
   &__item{
     width: 100%;
     @media screen and (min-width: $break-sm) {
-      width: 49%;
+      width: 50%;
 
     }
 
     @media screen and (min-width: $break-md) {
-      width: 30%;
+      width: 33.3%;
     }
     
   }

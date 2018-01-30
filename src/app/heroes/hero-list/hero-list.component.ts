@@ -17,7 +17,9 @@ import { HeroService } from '../share/hero.service';
 export class HeroList implements OnInit {
   private heroesObservable: Observable<IHero[]>;
   private heroes: IHero[];
+
   constructor(private store: Store<IHeroState>, private heroService: HeroService) { }
+
   public ngOnInit(): void {
     this.heroesObservable = this.store.select('heroes');
     this.heroesObservable.subscribe(heroes => {

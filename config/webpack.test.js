@@ -1,7 +1,7 @@
 var webpack = require('webpack');
 var helpers = require('./helpers');
 var path = require('path');
-var tslint = require('../tslintTest.json');
+var tslint = require('../tslint.json');
 var directorio = path.join(__dirname, '../');
 module.exports = {
   devtool: 'inline-source-map',
@@ -65,7 +65,7 @@ module.exports = {
       {
         test: /\.scss$/,
         exclude: /node_modules/,
-        use: ['to-string-loader','null-loader']// sass-loader not scss-loader
+        use: ['to-string-loader', 'null-loader']// sass-loader not scss-loader
       }
     ]
   },

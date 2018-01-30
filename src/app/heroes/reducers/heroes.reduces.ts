@@ -26,7 +26,7 @@ function editHeroAction(state: IHero[], payload: IHero): IHero[] {
 }
 
 function deleteHeroAction(state: IHero[], payload: string): IHero[] {
-  return [...state.slice(0, parseInt(payload, 0)), ...state.slice(parseInt(payload, 0) + 1, state.length )];
+  return [...state.slice(0, parseInt(payload, 0)), ...state.slice(parseInt(payload, 0) + 1, state.length)];
 }
 
 export const heroesReducer: any = (state: IHero[] = [], action: { type: string, payload: any }) => {  // tslint:disable-line
@@ -35,7 +35,7 @@ export const heroesReducer: any = (state: IHero[] = [], action: { type: string, 
       return addHeroAction(state, action.payload);
     case ADD_ALL_HERO:
       return addAllHeroAction(state, action.payload);
-    case ADD_ALL_HERO:
+    case EDIT_HERO:
       return editHeroAction(state, action.payload);
     case DELETE_HERO:
       return deleteHeroAction(state, action.payload);

@@ -19,7 +19,10 @@ export class HeroDetail implements OnInit {
   private heroesObservable: Observable<IHero[]>;
   private hero: IHero;
   private edit: boolean = false;
-  constructor(private trans: Transition, private store: Store<IHeroState>, private state: StateService, private heroService: HeroService) { }
+  constructor(private trans: Transition,
+    private store: Store<IHeroState>,
+    private state: StateService,
+    private heroService: HeroService) { }
 
   public ngOnInit(): void {
     this.heroesObservable = this.store.select('heroes');
